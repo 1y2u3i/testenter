@@ -1,0 +1,239 @@
+{
+  "SomeipMapping": [
+    {
+      "ServiceType": "Event",
+      "ServiceID": 18464,
+      "InstanceID": 3,
+      "EventID":32773,
+      "EventGroup": 2,
+      "MAJOR_VERSION": 1,
+      "MINOR_VERSION": 0,
+      "VSSNode": [
+        {
+          "Name": "Vehicle.Body.Lights.Beam.High.Left.IsOn",
+          "ByteOffset": 10,
+          "DataType": "BOOL",
+          "Length": 1,
+      	  "MethodID":32773
+        },
+        {
+          "Name": "Vehicle.Body.Lights.Beam.High.Right.IsOn",
+          "ByteOffset": 20,
+          "DataType": "BOOL",
+          "Length": 1,
+      	  "MethodID":32773
+        },
+        {
+          "Name": "Vehicle.Body.Lights.Beam.Low.Left.IsOn",
+          "ByteOffset": 30,
+          "DataType": "BOOL",
+          "Length": 1,
+      	  "MethodID":32773
+        },
+        {
+          "Name": "Vehicle.Body.Lights.Beam.Low.Right.IsOn",
+          "ByteOffset": 40,
+          "DataType": "BOOL",
+          "Length": 1,
+      	  "MethodID":32773
+        },
+        {
+          "Name": "Vehicle.Body.Lights.Running.FrontLeft.IsOn",
+          "ByteOffset": 50,
+          "DataType": "BOOL",
+          "Length": 1,
+      	  "MethodID":32773
+        },
+        {
+          "Name": "Vehicle.Body.Lights.Running.FrontRight.IsOn",
+          "ByteOffset": 60,
+          "DataType": "BOOL",
+          "Length": 1,
+      	  "MethodID":32773
+        },
+        {
+          "Name": "Vehicle.Body.Lights.Running.RearLeft.IsOn",
+          "ByteOffset": 70,
+          "DataType": "BOOL",
+          "Length": 1,
+      	  "MethodID":32773
+        },
+        {
+          "Name": "Vehicle.Body.Lights.Running.RearRight.IsOn",
+          "ByteOffset": 80,
+          "DataType": "BOOL",
+          "Length": 1,
+      	  "MethodID":32773
+        },
+        {
+          "Name": "Vehicle.Body.Lights.Backup.Left.IsOn",
+          "ByteOffset": 90,
+          "DataType": "BOOL",
+          "Length": 1,
+      	  "MethodID":32773
+        },
+        {
+          "Name": "Vehicle.Body.Lights.Backup.Right.IsOn",
+          "ByteOffset": 100,
+          "DataType": "BOOL",
+          "Length": 1,
+      	  "MethodID":32773
+        },
+        {
+          "Name": "Vehicle.Body.Lights.Parking.FrontLeft.IsOn",
+          "ByteOffset": 110,
+          "DataType": "BOOL",
+          "Length": 1,
+      	  "MethodID":32773
+        },
+        {
+          "Name": "Vehicle.Body.Lights.Parking.FrontRight.IsOn",
+          "ByteOffset": 120,
+          "DataType": "BOOL",
+          "Length": 1,
+      	  "MethodID":32773
+        },
+        {
+          "Name": "Vehicle.Body.Lights.Parking.RearLeft.IsOn",
+          "ByteOffset": 130,
+          "DataType": "BOOL",
+          "Length": 1,
+      	  "MethodID":32773
+        },
+        {
+          "Name": "Vehicle.Body.Lights.Parking.RearRight.IsOn",
+          "ByteOffset": 140,
+          "DataType": "BOOL",
+          "Length": 1,
+      	  "MethodID":32773
+        },
+        {
+          "Name": "Vehicle.Body.Lights.Fog.Front.IsOn",
+          "ByteOffset": 150,
+          "DataType": "BOOL",
+          "Length": 1,
+      	  "MethodID":32773
+        },
+        {
+          "Name": "Vehicle.Body.Lights.Fog.Rear.IsOn",
+          "ByteOffset": 160,
+          "DataType": "BOOL",
+          "Length": 1,
+      	  "MethodID":32773
+        },
+        {
+          "Name": "Vehicle.Body.Lights.LicensePlate.Front.IsOn",
+          "ByteOffset": 170,
+          "DataType": "BOOL",
+          "Length": 1,
+      	  "MethodID":32773
+        },
+        {
+          "Name": "Vehicle.Body.Lights.LicensePlate.Rear.IsOn",
+          "ByteOffset": 180,
+          "DataType": "BOOL",
+          "Length": 1,
+      	  "MethodID":32773
+        },
+        {
+          "Name": "Vehicle.Body.Lights.Brake.Left.IsActive",
+          "ByteOffset": 190,
+          "DataType": "UINT8",
+          "Length": 1,
+      	  "MethodID":32773,
+          "Transform": {
+            "transform": [
+              {
+                "from": 0,
+                "to": "INACTIVE"
+              },
+              {
+                "from": 1,
+                "to": "ACTIVE"
+              },
+              {
+                "from": 2,
+                "to": "ADAPTIVE"
+              }
+            ]
+          }
+        },
+        {
+          "Name": "Vehicle.Body.Lights.Brake.Right.IsActive",
+          "ByteOffset": 200,
+          "DataType": "UINT8",
+          "Length": 1,
+      	  "MethodID":32773,
+          "Transform": {
+            "transform": [
+              {
+                "from": 0,
+                "to": "INACTIVE"
+              },
+              {
+                "from": 1,
+                "to": "ACTIVE"
+              },
+              {
+                "from": 2,
+                "to": "ADAPTIVE"
+              }
+            ]
+          }
+        },
+        {
+          "Name": "Vehicle.Body.Lights.Hazard.IsSignaling",
+          "ByteOffset": 210,
+          "DataType": "BOOL",
+          "Length": 1,
+      	  "MethodID":32773
+        },
+        {
+          "Name": "Vehicle.Body.Lights.DirectionIndicator.FrontLeft.IsSignaling",
+          "ByteOffset": 220,
+          "DataType": "BOOL",
+          "Length": 1,
+      	  "MethodID":32773
+        },
+        {
+          "Name": "Vehicle.Body.Lights.DirectionIndicator.FrontRight.IsSignaling",
+          "ByteOffset": 230,
+          "DataType": "BOOL",
+          "Length": 1,
+      	  "MethodID":32773
+        },
+        {
+          "Name": "Vehicle.Body.Lights.DirectionIndicator.RearLeft.IsSignaling",
+          "ByteOffset": 240,
+          "DataType": "BOOL",
+          "Length": 1,
+      	  "MethodID":32773
+        },
+        {
+          "Name": "Vehicle.Body.Lights.DirectionIndicator.RearRight.IsSignaling",
+          "ByteOffset": 250,
+          "DataType": "BOOL",
+          "Length": 1,
+      	  "MethodID":32773
+        }
+      ]
+    },
+    {
+      "ServiceType": "Method",
+      "ServiceID": 18464,
+      "InstanceID": 1,
+      "MethodID": 8, 
+      "MAJOR_VERSION": 1,
+      "MINOR_VERSION": 0,
+      "VSSNode": [
+        {
+          "Name": "Vehicle.Body.Lights.ExteriorLightControl",
+          "ByteOffset": 0,
+          "DataType": "uint8[]",
+          "Length": 4,
+	  "MethodID":8
+        }
+      ]
+    }
+  ]
+}

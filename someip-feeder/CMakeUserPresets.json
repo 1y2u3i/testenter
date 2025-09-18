@@ -1,0 +1,9 @@
+{
+    "version": 4,
+    "vendor": {
+        "conan": {}
+    },
+    "include": [
+        "/home/fhi1cob/BEG/swdv.enterer/feeder/someip-generic/kuksa-someip-provider/build/generators/CMakePresets.json"
+    ]
+}

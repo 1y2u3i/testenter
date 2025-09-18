@@ -1,0 +1,13 @@
+[Unit]
+Description=SOMEIP Feeder Service Startup
+Wants=systemd-networkd.service
+After=systemd-networkd.service
+ 
+[Service]
+Type=forking
+ExecStart=/bin/bash /opt/feeder/bin/execute-apps.sh
+Restart=always
+RestartSec=1
+ 
+[Install]
+WantedBy=default.target

@@ -1,0 +1,81 @@
+{
+  "SomeipMapping": [
+    {
+      "ServiceType": "Event",
+      "ServiceID": 24576,
+      "InstanceID": 6,
+      "EventID":32773,
+      "EventGroup": 2,
+      "MAJOR_VERSION": 1,
+      "MINOR_VERSION": 0,
+      "VSSNode": [
+        {
+          "Name": "Vehicle.FlexiblePermissionManager.RemoteVehicleLockState",
+          "ByteOffset": 0,
+          "DataType": "bool",
+          "Length": 1,
+	        "MethodID":32773
+        },
+        {
+          "Name": "Vehicle.FlexiblePermissionManager.AlarmModeState",
+          "ByteOffset": 0,
+          "DataType": "bool",
+          "Length": 1,
+	        "MethodID":32775
+        },
+        {
+          "Name": "Vehicle.FlexiblePermissionManager.LowPowerModeState",
+          "ByteOffset": 0,
+          "DataType": "bool",
+          "Length": 1,
+	        "MethodID":32777
+        },
+        {
+          "Name": "Vehicle.FlexiblePermissionManager.ExhibitionModeState",
+          "ByteOffset": 0,
+          "DataType": "bool",
+          "Length": 1,
+          "MethodID":32785
+        }
+     ]
+    },
+    {
+      "ServiceType": "Method",
+      "ServiceID": 24576,
+      "InstanceID": 6,
+      "MethodID": 1, 
+      "MAJOR_VERSION": 1,
+      "MINOR_VERSION": 0,
+      "VSSNode": [
+        {
+          "Name": "Vehicle.FlexiblePermissionManager.RemoteVehicleLockControl",
+          "ByteOffset": 0,
+          "DataType": "uint16[]",
+          "Length": 2,
+          "MethodID":1
+        },
+        {
+          "Name": "Vehicle.FlexiblePermissionManager.AlarmModeControl",
+          "ByteOffset": 0,
+          "DataType": "uint16[]",
+          "Length": 2,
+          "MethodID":2
+        },
+        {
+          "Name": "Vehicle.FlexiblePermissionManager.LowPowerModeControl",
+          "ByteOffset": 0,
+          "DataType": "uint16[]",
+          "Length": 2,
+          "MethodID":3
+        },
+        {
+          "Name": "Vehicle.FlexiblePermissionManager.ExhibitionModeControl",
+          "ByteOffset": 0,
+          "DataType": "uint16[]",
+          "Length": 2,
+          "MethodID":4
+        }  
+      ]
+    }
+  ]
+}

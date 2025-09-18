@@ -1,0 +1,38 @@
+services:
+#  mosquitto:
+#    image: eclipse-mosquitto
+#    volumes: 
+#      - /home/debian/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
+#    network_mode: host
+#    privileged: true
+#    restart: unless-stopped
+
+  aws-cloud-connector:
+    image: cloud-connector:latest 
+    environment:
+      - SDV_MQTT_ADDRESS=mqtt://127.0.0.1:1883
+      - SDV_MIDDLEWARE_TYPE=native
+      - SDV_VEHICLEDATABROKER_ADDRESS=grpc://127.0.0.1:55555
+    volumes:
+      - /data/fota:/tmp/fota
+    network_mode: host
+    privileged: true
+    restart: unless-stopped
+
+  someip-feeders:
+    image: ghcr.io/bosch-engineering/swdv.enterer.minidemocar-ccu-someip-feeder:feeders-v3
+    network_mode: host
+    privileged: true
+    logging:
+      driver: none
+    restart: unless-stopped
+
+  databroker:
+    image: ghcr.io/eclipse/kuksa.val/databroker:master 
+    environment:
+      - KUKSA_DATA_BROKER_METADATA_FILE=/app/spec.json
+    volumes:
+      - /home/debian/vss_rel_mini-demo-car-v4.2.json:/app/spec.json
+    network_mode: host
+    privileged: true
+    restart: unless-stopped 

@@ -1,0 +1,207 @@
+{
+  "SomeipMapping": [
+    {
+      "ServiceType": "Event",
+      "ServiceID": 39936,
+      "InstanceID": 4,
+      "EventID":32774,
+      "EventGroup": 1,
+      "MAJOR_VERSION": 1,
+      "MINOR_VERSION": 0,
+      "VSSNode": [
+        {
+          "Name": "Vehicle.Chassis.Accelerator.PedalPosition",
+          "ByteOffset": 0,
+          "DataType": "uint8",
+          "Length": 1,
+	        "MethodID":32774
+        },
+        {
+          "Name": "Vehicle.Chassis.Brake.PedalPosition",
+          "ByteOffset": 0,
+          "DataType": "uint8",
+          "Length": 1,
+	        "MethodID":32775
+        },
+        {
+          "Name": "Vehicle.Powertrain.Transmission.SelectedGear",
+          "ByteOffset": 0,
+          "DataType": "int8",
+          "Length": 1,
+	        "MethodID":32776
+        },
+        {
+          "Name": "Vehicle.Powertrain.StartStop.StartStopButton",
+          "ByteOffset": 0,
+          "DataType": "bool",
+          "Length": 1,
+	        "MethodID":32777
+        },
+        {
+          "Name": "Vehicle.Chassis.SteeringWheel.Angle",
+          "ByteOffset": 0,
+          "DataType": "int16",
+          "Length": 2,
+	        "MethodID":32784
+        },
+        {
+          "Name": "Vehicle.Chassis.Axle.Row1.SteeringAngle",
+          "ByteOffset": 0,
+          "DataType": "float",
+          "Length": 4,
+	        "MethodID":32785
+        },
+        {
+          "Name": "Vehicle.Chassis.Axle.Row2.Wheel.Left.Speed",
+          "ByteOffset": 0,
+          "DataType": "float",
+          "Length": 4,
+	        "MethodID":32786
+        },
+        {
+          "Name": "Vehicle.Chassis.Axle.Row2.Wheel.Right.Speed",
+          "ByteOffset": 0,
+          "DataType": "float",
+          "Length": 4,
+          "MethodID":32787
+        },
+        {
+          "Name": "Vehicle.Chassis.SteeringWheel.ArbitratedAngle",
+          "ByteOffset": 0,
+          "DataType": "int16",
+          "Length": 2,
+	        "MethodID":32788
+        },
+        {
+          "Name": "Vehicle.Chassis.Accelerator.ArbitratedPedalPosition",
+          "ByteOffset": 0,
+          "DataType": "uint8",
+          "Length": 1,
+	        "MethodID":32789
+        },
+        {
+          "Name": "Vehicle.Chassis.Brake.ArbitratedPedalPosition",
+          "ByteOffset": 0,
+          "DataType": "uint8",
+          "Length": 1,
+	        "MethodID":32790
+        },
+        {
+          "Name": "Vehicle.Powertrain.Transmission.ArbitratedSelectedGear",
+          "ByteOffset": 0,
+          "DataType": "int8",
+          "Length": 1,
+	        "MethodID":32791
+        },
+        {
+          "Name": "Vehicle.Powertrain.StartStop.ArbitratedStartStopButton",
+          "ByteOffset": 0,
+          "DataType": "bool",
+          "Length": 1,
+	        "MethodID":32792
+        },
+        {
+          "Name": "Vehicle.Chassis.Steering.StartPermission",
+          "ByteOffset": 0,
+          "DataType": "bool",
+          "Length": 1,
+	        "MethodID":32793
+        },
+        {
+          "Name": "Vehicle.Powertrain.StartPermission",
+          "ByteOffset": 0,
+          "DataType": "bool",
+          "Length": 1,
+	        "MethodID":32800
+        },
+        {
+          "Name": "Vehicle.RequestorInControl",
+          "ByteOffset": 0,
+          "DataType": "uint16",
+          "Length": 2,
+	        "MethodID":32801
+        },
+        {
+          "Name": "Vehicle.Powertrain.RequestRoundTripCounter",
+          "ByteOffset": 0,
+          "DataType": "uint8",
+          "Length": 1,
+	        "MethodID":32802
+        },
+        {
+          "Name": "Vehicle.Chassis.MechanicalLockIsActive",
+          "ByteOffset": 0,
+          "DataType": "bool",
+          "Length": 1,
+	        "MethodID":32803
+        },
+        {
+          "Name": "Vehicle.Powertrain.PropulsionLockIsActive",
+          "ByteOffset": 0,
+          "DataType": "bool",
+          "Length": 1,
+	        "MethodID":32804
+        },
+	{
+          "Name": "Vehicle.Powertrain.Application_SW_Version",
+          "ByteOffset": 7,
+          "DataType": "string",
+          "Length":6,
+	  "MethodID":32805
+        }
+     ]
+    },
+    {
+      "ServiceType": "Method",
+      "ServiceID": 39936,
+      "InstanceID": 5,
+      "MethodID": 2, 
+      "MAJOR_VERSION": 1,
+      "MINOR_VERSION": 0,
+      "VSSNode": [
+        {
+          "Name": "Vehicle.Chassis.SteeringWheel.AngleControl",
+          "ByteOffset": 0,
+          "DataType": "int16[]",
+          "Length": 2,
+          "MethodID":1
+        },        
+        {
+          "Name": "Vehicle.Chassis.Accelerator.PedalPositionControl",
+          "ByteOffset": 0,
+          "DataType": "uint16[]",
+          "Length": 2,
+          "MethodID":2
+        },
+        {
+          "Name": "Vehicle.Chassis.Brake.PedalPositionControl",
+          "ByteOffset": 0,
+          "DataType": "uint16[]",
+          "Length": 2,
+          "MethodID":3
+        },
+        {
+          "Name": "Vehicle.Powertrain.StartStop.StartControl",
+          "ByteOffset": 0,
+          "DataType": "uint16[]",
+          "Length": 2,
+          "MethodID":4
+        },
+        {
+          "Name": "Vehicle.Powertrain.Transmission.SelectedGearControl",
+          "ByteOffset": 0,
+          "DataType": "int8_uint16",
+          "Length": 2,
+          "MethodID":5
+        },
+        {
+          "Name": "Vehicle.RequestTakeOver",
+          "ByteOffset": 0,
+          "DataType": "uint16[]",
+          "Length": 2,
+          "MethodID":8
+        } 
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "SomeipMapping": [
+    {
+      "ServiceType": "Event",
+      "ServiceID": 34912,
+      "InstanceID": 12,
+      "EventID":32773,
+      "EventGroup": 1,
+      "MAJOR_VERSION": 1,
+      "MINOR_VERSION": 0,
+      "VSSNode": [
+        {
+          "Name": "Vehicle.Body.InteriorMonitoring.InteriorActivityDetected",
+          "ByteOffset": 0,
+          "DataType": "bool",
+          "Length": 1,
+          "MethodID":32773
+        }
+     ]
+    }
+  ]
+}
+  

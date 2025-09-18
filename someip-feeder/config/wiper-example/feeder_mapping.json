@@ -1,0 +1,149 @@
+{
+  "SomeipMapping": [
+    {
+      "ServiceType": "Event",
+      "ServiceID": 24784,
+      "InstanceID": 1,
+      "EventID":32769,
+      "EventGroup": 100,
+      "MAJOR_VERSION": 1,
+      "MINOR_VERSION": 0,
+      "VSSNode": [
+        {
+          "Name": "Vehicle.Body.Windshield.Front.Wiping.System.Mode",
+          "ByteOffset": 0,
+          "DataType": "STRING",
+          "Length": 0
+        },
+        {
+          "Name": "Vehicle.Body.Windshield.Front.Wiping.System.Frequency",
+          "ByteOffset": 0,
+          "DataType": "UINT8",
+          "Length": 0
+        },
+        {
+          "Name": "Vehicle.Body.Windshield.Front.Wiping.System.TargetPosition",
+          "ByteOffset": 0,
+          "DataType": "FLOAT",
+          "Length": 0
+        },
+        {
+          "Name": "Vehicle.Body.Windshield.Front.Wiping.System.ActualPosition",
+          "ByteOffset": 1,
+          "DataType": "FLOAT",
+          "Length": 4,
+          "Transform": {
+            "transform": [
+              {
+                "from": 10,
+                "to": 100
+              },
+              {
+                "from": 11,
+                "to": 110
+              },
+              {
+                "from": 12,
+                "to": 120
+              },
+              {
+                "from": 13,
+                "to": 130
+              }
+            ]
+          }
+        },
+        {
+          "Name": "Vehicle.Body.Windshield.Front.Wiping.System.DriveCurrent",
+          "ByteOffset": 5,
+          "DataType": "FLOAT",
+          "Length": 4
+        },
+        {
+          "Name": "Vehicle.Body.Windshield.Front.Wiping.System.IsBlocked",
+          "ByteOffset": 14,
+          "DataType": "BOOL",
+          "Length": 1
+        },
+        {
+          "Name": "Vehicle.Body.Windshield.Front.Wiping.System.IsEndingWipeCycle",
+          "ByteOffset": 11,
+          "DataType": "BOOL",
+          "Length": 1
+        },
+        {
+          "Name": "Vehicle.Body.Windshield.Front.Wiping.System.IsOverheated",
+          "ByteOffset": 15,
+          "DataType": "BOOL",
+          "Length": 1
+        },
+        {
+          "Name": "Vehicle.Body.Windshield.Front.Wiping.System.IsPositionReached",
+          "ByteOffset": 13,
+          "DataType": "BOOL",
+          "Length": 1
+        },
+        {
+          "Name": "Vehicle.Body.Windshield.Front.Wiping.System.IsWiperError",
+          "ByteOffset": 12,
+          "DataType": "BOOL",
+          "Length": 1
+        },
+        {
+          "Name": "Vehicle.Body.Windshield.Front.Wiping.System.IsWiping",
+          "ByteOffset": 10,
+          "DataType": "BOOL",
+          "Length": 1
+        }
+      ]
+    },
+    {
+      "ServiceType": "Method",
+      "ServiceID": 24867,
+      "InstanceID": 11,
+      "MethodID": 7,
+      "MAJOR_VERSION": 1,
+      "MINOR_VERSION": 0,
+      "VSSNode": [
+        {
+          "Name": "Vehicle.Body.Windshield.Front.Wiping.System.Mode",
+          "ByteOffset": 5,
+          "DataType": "UINT8",
+          "Length": 1,
+          "Transform": {
+            "transform": [
+              {
+                "from": "PLANT_MODE",
+                "to": 0
+              },
+              {
+                "from": "STOP_HOLD",
+                "to": 1
+              },
+              {
+                "from": "WIPE",
+                "to": 2
+              },
+              {
+                "from": "EMERGENCY_STOP",
+                "to": 3
+              }
+            ]
+          }
+        },
+        {
+          "Name": "Vehicle.Body.Windshield.Front.Wiping.System.Frequency",
+          "ByteOffset": 0,
+          "DataType": "UINT8",
+          "Length": 1
+        },
+        {
+          "Name": "Vehicle.Body.Windshield.Front.Wiping.System.TargetPosition",
+          "ByteOffset": 1,
+          "DataType": "FLOAT",
+          "Length": 4
+        }
+      ]
+    }
+  ]
+}

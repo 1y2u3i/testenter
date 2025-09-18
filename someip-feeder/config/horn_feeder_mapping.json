@@ -1,0 +1,39 @@
+{
+  "SomeipMapping": [
+    {
+      "ServiceType": "Event",
+      "ServiceID": 18512,
+      "InstanceID": 10,
+      "EventID":32773,
+      "EventGroup": 1,
+      "MAJOR_VERSION": 1,
+      "MINOR_VERSION": 0,
+      "VSSNode": [
+        {
+          "Name": "Vehicle.Body.Horn.IsActive",
+          "ByteOffset": 0,
+          "DataType": "BOOL",
+          "Length": 1,
+      	  "MethodID":32773
+        }
+      ]
+    },
+    {
+      "ServiceType": "Method",
+      "ServiceID": 18512,
+      "InstanceID": 10,
+      "MethodID": 1, 
+      "MAJOR_VERSION": 1,
+      "MINOR_VERSION": 0,
+      "VSSNode": [
+        {
+          "Name": "Vehicle.Body.Horn.HornControl",
+          "ByteOffset": 0,
+          "DataType": "uint8[]",
+          "Length": 4,
+	  "MethodID":1
+        }
+      ]
+    }
+  ]
+}

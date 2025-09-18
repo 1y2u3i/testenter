@@ -1,0 +1,9 @@
+[Unit]
+	Description=Start FOTA Service
+	After=feeder.service
+	[Service]
+	WorkingDirectory=/data/fota
+	Type=simple
+	ExecStart=/data/fota/flash.sh
+[Install]
+	WantedBy=multi-user.target
