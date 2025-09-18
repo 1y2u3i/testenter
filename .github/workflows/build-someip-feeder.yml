@@ -31,6 +31,9 @@ jobs:
       with:
         submodules: "recursive"
 
+    - name: Set execute permissions for build-release.sh
+      run: chmod +x ./build-release.sh
+
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v3
 
@@ -56,6 +59,8 @@ jobs:
           type=raw,value=latest,enable={{is_default_branch}}
           type=raw,value=arm64-latest
           type=raw,value=feeders-v4
+
+    
 
     - name: Build and push Docker image
       uses: docker/build-push-action@v5
