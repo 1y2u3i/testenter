@@ -18,7 +18,7 @@ permissions:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: 1y2u3i/testenter/someip-feeder
+  IMAGE_NAME: ${{ github.repository }}/someip-feeder
 
 jobs:
   build-and-push:
@@ -32,7 +32,7 @@ jobs:
         submodules: "recursive"
 
     - name: Set execute permissions for build-release.sh
-      run: chmod +x ./build-release.sh
+      run: chmod +x ./someip-feeder/build-release.sh
 
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v3
