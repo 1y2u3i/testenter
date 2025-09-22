@@ -1,0 +1,12 @@
+{
+    "manifestVersion": "v3",
+    "name": "AWS Cloud Connector",
+    "interfaces": [
+        {
+            "type": "vehicle-signal-interface",
+            "config": {
+                "src": "./immo-vss/vss_rel_5.0-immo.json"
+            }
+        }
+    ]
+}

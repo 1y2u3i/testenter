@@ -1,0 +1,37 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317
+
+processors:
+  batch:
+
+exporters:
+  debug:
+    verbosity: detailed
+  awsxray:
+    region: 'eu-central-1'
+  awsemf:
+    region: 'eu-central-1'
+    resource_to_telemetry_conversion:
+      enabled: true
+  awscloudwatchlogs:
+    region: 'eu-central-1'
+    log_group_name: swdv-enterer-onboard-group
+    log_stream_name: swdv-enterer-onboard-stream
+
+service:
+  pipelines:
+    logs:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [awscloudwatchlogs]
+    metrics:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [awsemf]
+    traces:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [awsxray]

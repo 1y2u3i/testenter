@@ -1,0 +1,10 @@
+{
+    "endpoint"          :   "a1poqnhtwgj0le-ats.iot.eu-central-1.amazonaws.com",
+    "deviceId"          :   "ENTERER_Lab02",
+    "cert_filepath"     :   "/mnt/certs/cert.pem",
+    "pri_key_filepath"  :   "/mnt/certs/private.key",
+    "ca_filepath"       :   "/mnt/certs/root-CA.crt",
+    "mqtt_port"         :   1884,
+    "local_mqtt_port"   :   1883,
+    "vss_signals"       : ["Vehicle."]
+}

@@ -1,0 +1,348 @@
+syntax = "proto3";
+
+
+message Vehicle {
+  repeated uint32 StartPermissions = 1;
+  repeated uint32 RequestTakeOver = 2;
+  uint32 RequestorInControl = 3;
+  VehiclePowertrain Powertrain = 4;
+  VehicleChassis Chassis = 5;
+  VehicleBody Body = 6;
+  VehicleFlexiblePermissionManager FlexiblePermissionManager = 7;
+}
+
+message VehiclePowertrain {
+  uint32 RequestRoundTripCounter = 1;
+  VehiclePowertrainBody Body = 2;
+  bool PropulsionLockIsActive = 3;
+  repeated uint32 PropulsionLockControl = 4;
+  repeated uint32 PropulsionModeControl = 5;
+  bool StartPermission = 6;
+  VehiclePowertrainStartStop StartStop = 7;
+  string Application_SW_Version = 8;
+  VehiclePowertrainTransmission Transmission = 9;
+}
+
+message VehiclePowertrainBody {
+  repeated uint32 ResponseRoundTrip = 1;
+}
+
+message VehiclePowertrainStartStop {
+  bool EngineStart = 1;
+  bool StartStopButton = 2;
+  bool ArbitratedStartStopButton = 3;
+  repeated uint32 StartControl = 4;
+}
+
+message VehiclePowertrainTransmission {
+  int32 SelectedGear = 1;
+  int32 ArbitratedSelectedGear = 2;
+  repeated int32 SelectedGearControl = 3;
+}
+
+message VehicleChassis {
+  VehicleChassisAxle Axle = 1;
+  VehicleChassisSteering Steering = 2;
+  VehicleChassisSteeringWheel SteeringWheel = 3;
+  VehicleChassisAccelerator Accelerator = 4;
+  VehicleChassisBrake Brake = 5;
+  bool MechanicalLockIsActive = 6;
+  repeated uint32 MechanicalLockControl = 7;
+}
+
+message VehicleChassisAxle {
+  VehicleChassisAxleRow1 Row1 = 1;
+  VehicleChassisAxleRow2 Row2 = 2;
+}
+
+message VehicleChassisAxleRow1 {
+  float SteeringAngle = 1;
+  VehicleChassisAxleRow1Wheel Wheel = 2;
+}
+
+message VehicleChassisAxleRow1Wheel {
+  VehicleChassisAxleRow1WheelLeft Left = 1;
+  VehicleChassisAxleRow1WheelRight Right = 2;
+}
+
+message VehicleChassisAxleRow1WheelLeft {
+  float Speed = 1;
+  float SpeedSet = 2;
+}
+
+message VehicleChassisAxleRow1WheelRight {
+  float Speed = 1;
+  float SpeedSet = 2;
+}
+
+message VehicleChassisAxleRow2 {
+  float SteeringAngle = 1;
+  VehicleChassisAxleRow2Wheel Wheel = 2;
+}
+
+message VehicleChassisAxleRow2Wheel {
+  VehicleChassisAxleRow2WheelLeft Left = 1;
+  VehicleChassisAxleRow2WheelRight Right = 2;
+}
+
+message VehicleChassisAxleRow2WheelLeft {
+  float Speed = 1;
+  float SpeedSet = 2;
+}
+
+message VehicleChassisAxleRow2WheelRight {
+  float Speed = 1;
+  float SpeedSet = 2;
+}
+
+message VehicleChassisSteering {
+  bool StartPermission = 1;
+}
+
+message VehicleChassisSteeringWheel {
+  int32 Angle = 1;
+  int32 ArbitratedAngle = 2;
+  repeated int32 AngleControl = 3;
+}
+
+message VehicleChassisAccelerator {
+  uint32 PedalPosition = 1;
+  uint32 ArbitratedPedalPosition = 2;
+  repeated uint32 PedalPositionControl = 3;
+}
+
+message VehicleChassisBrake {
+  uint32 PedalPosition = 1;
+  uint32 ArbitratedPedalPosition = 2;
+  bool BrakePedalSwitch = 3;
+  repeated uint32 PedalPositionControl = 4;
+}
+
+message VehicleBody {
+  VehicleBodyHorn Horn = 1;
+  VehicleBodyLights Lights = 2;
+  VehicleBodyAlarmSystem AlarmSystem = 3;
+  uint32 RequestRoundTripCounter = 4;
+  repeated uint32 ResponseRoundTrip = 5;
+  VehicleBodyInteriorMonitoring InteriorMonitoring = 6;
+}
+
+message VehicleBodyHorn {
+  bool IsActive = 1;
+  repeated uint32 HornControl = 2;
+}
+
+message VehicleBodyLights {
+  VehicleBodyLightsBeam Beam = 1;
+  VehicleBodyLightsRunning Running = 2;
+  VehicleBodyLightsBackup Backup = 3;
+  VehicleBodyLightsParking Parking = 4;
+  VehicleBodyLightsFog Fog = 5;
+  VehicleBodyLightsLicensePlate LicensePlate = 6;
+  VehicleBodyLightsBrake Brake = 7;
+  VehicleBodyLightsHazard Hazard = 8;
+  VehicleBodyLightsDirectionIndicator DirectionIndicator = 9;
+  repeated uint32 ExteriorLightControl = 10;
+}
+
+message VehicleBodyLightsBeam {
+  VehicleBodyLightsBeamLow Low = 1;
+  VehicleBodyLightsBeamHigh High = 2;
+}
+
+message VehicleBodyLightsBeamLow {
+  VehicleBodyLightsBeamLowLeft Left = 1;
+  VehicleBodyLightsBeamLowRight Right = 2;
+}
+
+message VehicleBodyLightsBeamLowLeft {
+  bool IsOn = 1;
+  bool IsDefect = 2;
+}
+
+message VehicleBodyLightsBeamLowRight {
+  bool IsOn = 1;
+  bool IsDefect = 2;
+}
+
+message VehicleBodyLightsBeamHigh {
+  VehicleBodyLightsBeamHighLeft Left = 1;
+  VehicleBodyLightsBeamHighRight Right = 2;
+}
+
+message VehicleBodyLightsBeamHighLeft {
+  bool IsOn = 1;
+  bool IsDefect = 2;
+}
+
+message VehicleBodyLightsBeamHighRight {
+  bool IsOn = 1;
+  bool IsDefect = 2;
+}
+
+message VehicleBodyLightsRunning {
+  VehicleBodyLightsRunningFrontLeft FrontLeft = 1;
+  VehicleBodyLightsRunningFrontRight FrontRight = 2;
+  VehicleBodyLightsRunningRearLeft RearLeft = 3;
+  VehicleBodyLightsRunningRearRight RearRight = 4;
+}
+
+message VehicleBodyLightsRunningFrontLeft {
+  bool IsOn = 1;
+  bool IsDefect = 2;
+}
+
+message VehicleBodyLightsRunningFrontRight {
+  bool IsOn = 1;
+  bool IsDefect = 2;
+}
+
+message VehicleBodyLightsRunningRearLeft {
+  bool IsOn = 1;
+  bool IsDefect = 2;
+}
+
+message VehicleBodyLightsRunningRearRight {
+  bool IsOn = 1;
+  bool IsDefect = 2;
+}
+
+message VehicleBodyLightsBackup {
+  VehicleBodyLightsBackupLeft Left = 1;
+  VehicleBodyLightsBackupRight Right = 2;
+}
+
+message VehicleBodyLightsBackupLeft {
+  bool IsOn = 1;
+  bool IsDefect = 2;
+}
+
+message VehicleBodyLightsBackupRight {
+  bool IsOn = 1;
+  bool IsDefect = 2;
+}
+
+message VehicleBodyLightsParking {
+  VehicleBodyLightsParkingFrontLeft FrontLeft = 1;
+  VehicleBodyLightsParkingFrontRight FrontRight = 2;
+  VehicleBodyLightsParkingRearLeft RearLeft = 3;
+  VehicleBodyLightsParkingRearRight RearRight = 4;
+}
+
+message VehicleBodyLightsParkingFrontLeft {
+  bool IsOn = 1;
+  bool IsDefect = 2;
+}
+
+message VehicleBodyLightsParkingFrontRight {
+  bool IsOn = 1;
+  bool IsDefect = 2;
+}
+
+message VehicleBodyLightsParkingRearLeft {
+  bool IsOn = 1;
+  bool IsDefect = 2;
+}
+
+message VehicleBodyLightsParkingRearRight {
+  bool IsOn = 1;
+  bool IsDefect = 2;
+}
+
+message VehicleBodyLightsFog {
+  VehicleBodyLightsFogRear Rear = 1;
+  VehicleBodyLightsFogFront Front = 2;
+}
+
+message VehicleBodyLightsFogRear {
+  bool IsOn = 1;
+  bool IsDefect = 2;
+}
+
+message VehicleBodyLightsFogFront {
+  bool IsOn = 1;
+  bool IsDefect = 2;
+}
+
+message VehicleBodyLightsLicensePlate {
+  VehicleBodyLightsLicensePlateRear Rear = 1;
+  VehicleBodyLightsLicensePlateFront Front = 2;
+}
+
+message VehicleBodyLightsLicensePlateRear {
+  bool IsOn = 1;
+  bool IsDefect = 2;
+}
+
+message VehicleBodyLightsLicensePlateFront {
+  bool IsOn = 1;
+  bool IsDefect = 2;
+}
+
+message VehicleBodyLightsBrake {
+  VehicleBodyLightsBrakeLeft Left = 1;
+  VehicleBodyLightsBrakeRight Right = 2;
+}
+
+message VehicleBodyLightsBrakeLeft {
+  string IsActive = 1;
+  bool IsDefect = 2;
+}
+
+message VehicleBodyLightsBrakeRight {
+  string IsActive = 1;
+  bool IsDefect = 2;
+}
+
+message VehicleBodyLightsHazard {
+  bool IsSignaling = 1;
+  bool IsDefect = 2;
+}
+
+message VehicleBodyLightsDirectionIndicator {
+  VehicleBodyLightsDirectionIndicatorFrontLeft FrontLeft = 1;
+  VehicleBodyLightsDirectionIndicatorFrontRight FrontRight = 2;
+  VehicleBodyLightsDirectionIndicatorRearLeft RearLeft = 3;
+  VehicleBodyLightsDirectionIndicatorRearRight RearRight = 4;
+}
+
+message VehicleBodyLightsDirectionIndicatorFrontLeft {
+  bool IsSignaling = 1;
+  bool IsDefect = 2;
+}
+
+message VehicleBodyLightsDirectionIndicatorFrontRight {
+  bool IsSignaling = 1;
+  bool IsDefect = 2;
+}
+
+message VehicleBodyLightsDirectionIndicatorRearLeft {
+  bool IsSignaling = 1;
+  bool IsDefect = 2;
+}
+
+message VehicleBodyLightsDirectionIndicatorRearRight {
+  bool IsSignaling = 1;
+  bool IsDefect = 2;
+}
+
+message VehicleBodyAlarmSystem {
+  repeated uint32 AlarmSystemActivationControl = 1;
+  bool AlarmTriggered = 2;
+}
+
+message VehicleBodyInteriorMonitoring {
+  bool InteriorActivityDetected = 1;
+}
+
+message VehicleFlexiblePermissionManager {
+  bool AlarmModeState = 1;
+  bool RemoteVehicleLockState = 2;
+  bool LowPowerModeState = 3;
+  repeated uint32 RemoteVehicleLockControl = 4;
+  repeated uint32 AlarmModeControl = 5;
+  repeated uint32 LowPowerModeControl = 6;
+  bool ExhibitionModeState = 7;
+  repeated uint32 ExhibitionModeControl = 8;
+}
+

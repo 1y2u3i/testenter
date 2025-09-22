@@ -1,0 +1,7 @@
+{
+  "command": "flash-vcu",
+  "file": "s3://enterer-vip-fota-containers/enc_1722499936516_H2HTR_CAN2_PT.dbc",
+  "key": "MlD55JdYI5WhHsmJ280PB6ZKgjoYETbcwM9ujezinBo937oRIN6OtCJ2Yhe4Ho3rUgl2GjAk47AfBjhY/X8mI3GHOdXpZtmJVgbfYLzKBA1ovSrTU4Jxagq/ObhmQpKa5/yFUf2ar8SGRrf/MWD7kel3MLqq8Xg6VdkHJ3h8xauKdrZq53/7C4ZD7KMTdfhU77jTeUowp/XJoIVAStN30VqquNNDHFxDwpCcV82neOUdxDJFNGS3bd5cx9GpVMlONqHjeR+0ltg/7+nxSk6Gbf0oNx5LBsKa+B8LPgWLCmD8iDvkdgrCi8YupPbHonJjL/oj2G2DMzbHbWMsiZGA7g==",
+  "iv": "ibimsibimsibimsi",
+  "requestor": "scd4abt"
+}

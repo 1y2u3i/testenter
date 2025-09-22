@@ -1,0 +1,15 @@
+{
+    "endpoint"          :   "a1poqnhtwgj0le-ats.iot.eu-central-1.amazonaws.com",
+    "deviceId"          :   "ENTERER_MiniDemoCar2",
+    "cert_filepath"     :   "/mnt/certs/cert.pem",
+    "pri_key_filepath"  :   "/mnt/certs/private.key",
+    "ca_filepath"       :   "/mnt/certs/root-CA.crt",
+    "credentials_provider": "https://c2hfk1jmmwovhj.credentials.iot.eu-central-1.amazonaws.com/role-aliases/ENTERER_Thing_S3_Access/credentials",
+    "fota_bucket"       :   "enterer-vip-fota-containers",
+    "mqtt_port"         :   1884,
+    "local_mqtt_port"   :   1883,
+    "vss_signals"       :   ["Vehicle."],
+    "fota_public_key"   :   "fota/key.pub",
+    "fota_private_key"  :   "fota/key.pem",
+    "upload_bucket"     :   "enterer-generic-upload"
+}

@@ -1,0 +1,44 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iot:Publish",
+        "iot:Receive",
+        "iot:PublishRetain"
+      ],
+      "Resource": [
+        "arn:aws:iot:eu-central-1:513821444862:topic/sdk/test/java",
+        "arn:aws:iot:eu-central-1:513821444862:topic/sdk/test/python",
+        "arn:aws:iot:eu-central-1:513821444862:topic/sdk/test/js",        
+        "arn:aws:iot:eu-central-1:513821444862:topic/enterer/downstream/ENTERER_Lab02",
+        "arn:aws:iot:eu-central-1:513821444862:topic/enterer/upstream"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iot:Subscribe"
+      ],
+      "Resource": [
+        "arn:aws:iot:eu-central-1:513821444862:topicfilter/sdk/test/java",
+        "arn:aws:iot:eu-central-1:513821444862:topicfilter/sdk/test/python",
+        "arn:aws:iot:eu-central-1:513821444862:topicfilter/sdk/test/js",        
+        "arn:aws:iot:eu-central-1:513821444862:topicfilter/enterer/downstream/ENTERER_Lab02",
+        "arn:aws:iot:eu-central-1:513821444862:topicfilter/enterer/upstream"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iot:Connect"
+      ],
+      "Resource": [
+        "arn:aws:iot:eu-central-1:513821444862:client/sdk-java",
+        "arn:aws:iot:eu-central-1:513821444862:client/ENTERER_Lab02",
+        "arn:aws:iot:eu-central-1:513821444862:client/sdk-nodejs-*"
+      ]
+    }
+  ]
+}
