@@ -52,10 +52,12 @@ RUN pip3 install --no-cache-dir pyinstaller==6.8.0 \
 WORKDIR /workspace
 
 RUN velocitas init
-WORKDIR /workspace/app
+
 # Generate Python files from protobuf
 RUN protoc --python_out=./app/src/ --proto_path=. minidemocar2.proto
 RUN python3 -c "import google.protobuf; print('Protobuf version:', google.protobuf.__version__)"
+
+WORKDIR /workspace/app
 RUN python3 -c "import sys; sys.path.append('./src'); import minidemocar2_pb2; print('New protobuf file imported successfully')"
 
 
