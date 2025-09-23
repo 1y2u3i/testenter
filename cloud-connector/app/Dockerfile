@@ -1,4 +1,4 @@
-# Copyright (c) 2022-2024 Contributors to the Eclipse Foundation
++# Copyright (c) 2022-2024 Contributors to the Eclipse Foundation
 #
 # This program and the accompanying materials are made available under the
 # terms of the Apache License, Version 2.0 which is available at
@@ -54,11 +54,15 @@ WORKDIR /workspace
 RUN velocitas init
 
 # Generate Python files from protobuf
-RUN protoc --python_out=./app/src/ --proto_path=. minidemocar2.proto
+RUN mkdir -p /workspace/app/src
+RUN protoc --python_out=/workspace/app/src/ --proto_path=/workspace /workspace/minidemocar2.proto
+
+RUN ls -la /workspace/app/src/minidemocar2_pb2.py
+
 RUN python3 -c "import google.protobuf; print('Protobuf version:', google.protobuf.__version__)"
 
 WORKDIR /workspace/app
-RUN python3 -c "import sys; sys.path.append('./src'); import minidemocar2_pb2; print('New protobuf file imported successfully')"
+RUN PYTHONPATH=/workspace/app/src python3 -c "import minidemocar2_pb2; print('✅ Import successful')"
 
 
 #RUN pyinstaller --clean -F -s src/main.py
