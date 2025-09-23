@@ -47,12 +47,15 @@ RUN pip3 install --no-cache-dir pyinstaller==6.8.0 \
     && pip3 install --no-cache-dir staticx \
     && pip3 install --no-cache-dir -r /workspace/app/requirements.txt \
     && pip3 install --no-cache-dir -r /workspace/app/requirements-links.txt \
-    && pip3 install --no-cache-dir --upgrade "protobuf>=4.25.0"
+    
    
 
 WORKDIR /workspace
 
 RUN velocitas init
+
+RUN pip3 install --no-cache-dir --upgrade "protobuf>=4.25.0"
+RUN python3 -c "import google.protobuf; print('Protobuf version:', google.protobuf.__version__)"
 
 # Generate Python files from protobuf
 RUN mkdir -p /workspace/app/src
@@ -60,7 +63,7 @@ RUN protoc --python_out=/workspace/app/src/ --proto_path=/workspace /workspace/m
 
 RUN ls -la /workspace/app/src/minidemocar2_pb2.py
 
-RUN python3 -c "import google.protobuf; print('Protobuf version:', google.protobuf.__version__)"
+
 
 WORKDIR /workspace/app
 RUN PYTHONPATH=/workspace/app/src python3 -c "import minidemocar2_pb2; print('✅ Import successful')"
