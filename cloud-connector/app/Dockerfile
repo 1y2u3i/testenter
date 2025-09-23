@@ -18,13 +18,14 @@
 FROM --platform=$TARGETPLATFORM ghcr.io/eclipse-velocitas/devcontainer-base-images/python:v0.2 as builder
 ARG TARGETARCH
 
-RUN apt-get update && apt-get install -y python3-dev
+RUN apt-get update && apt-get install -y python3-dev protobuf-compiler
 
 RUN pwd
 RUN echo "$PWD"
 
 COPY ./.velocitas.json /workspace/.velocitas_org.json
 COPY ./app /workspace/app
+COPY ./minidemocar2.proto /workspace/minidemocar2.proto
 COPY immo-vss/vss_rel_5.0-immo.json /workspace/immo-vss/vss_rel_5.0-immo.json
 
 
@@ -50,6 +51,9 @@ RUN pip3 install --no-cache-dir pyinstaller==6.8.0 \
 WORKDIR /workspace
 
 RUN velocitas init
+
+# Generate Python files from protobuf
+RUN protoc --python_out=./app/src/ --proto_path=. minidemocar2.proto
 
 WORKDIR /workspace/app
 
