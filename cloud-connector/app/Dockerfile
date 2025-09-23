@@ -55,8 +55,17 @@ RUN velocitas init
 RUN pip3 install --no-cache-dir --upgrade "protobuf>=4.25.0"
 RUN python3 -c "import google.protobuf; print('Protobuf version:', google.protobuf.__version__)"
 
+# Install modern protoc to match Python protobuf runtime
+ARG PROTOC_VERSION=25.1
+RUN apt-get update && apt-get install -y unzip curl && \
+    arch=$(uname -m) && case "$arch" in x86_64) PROTOC_ARCH=x86_64 ;; aarch64) PROTOC_ARCH=aarch_64 ;; *) echo "Unsupported arch: $arch" && exit 1 ;; esac && \
+    curl -fsSL -o /tmp/protoc.zip https://github.com/protocolbuffers/protobuf/releases/download/v${PROTOC_VERSION}/protoc-${PROTOC_VERSION}-linux-${PROTOC_ARCH}.zip && \
+    unzip -o /tmp/protoc.zip -d /usr/local bin/protoc 'include/*' && rm /tmp/protoc.zip && \
+    protoc --version
+
 # Generate Python files from protobuf
 RUN mkdir -p /workspace/app/src
+RUN rm -f /workspace/app/src/*_pb2.py || true
 RUN protoc --python_out=/workspace/app/src/ --proto_path=/workspace /workspace/minidemocar2.proto
 
 RUN ls -la /workspace/app/src/minidemocar2_pb2.py
