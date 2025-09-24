@@ -1,6 +1,6 @@
 {
-    "endpoint"          :   "a1poqnhtwgj0le-ats.iot.eu-central-1.amazonaws.com",
-    "deviceId"          :   "ENTERER_MiniDemoCar2",
+    "endpoint"          :   "a2f287uu116gid.ats.iot.cn-north-1.amazonaws.com.cn",
+    "deviceId"          :   "SDV_E2E_MiniDemoCar_China",
     "cert_filepath"     :   "/mnt/certs/cert.pem",
     "pri_key_filepath"  :   "/mnt/certs/private.key",
     "ca_filepath"       :   "/mnt/certs/root-CA.crt",
