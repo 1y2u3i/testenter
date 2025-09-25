@@ -49,10 +49,10 @@ from velocitas_sdk.vehicle_app import VehicleApp, subscribe_topic
 
 configFile = "/mnt/env_var.json"
 
-message_topic_upstream_ack = "enterer/upstream/ENTERER_MiniDemoCar2"
-message_topic_upstream = "enterer/upstream/ENTERER_MiniDemoCar2/binary"
+message_topic_upstream_ack = "enterer/upstream/SDV_E2E_MiniDemoCar_China"
+message_topic_upstream = "enterer/upstream/SDV_E2E_MiniDemoCar_China/binary"
 message_topic_upstream_fota_control = (
-    "enterer/upstream/ENTERER_MiniDemoCar2/fota_control"
+    "enterer/upstream/SDV_E2E_MiniDemoCar_China/fota_control"
 )
 message_topic_down = "enterer/downstream"
 # message_topic_telemetry_upstream = "enterer/upstream/telemetry"
