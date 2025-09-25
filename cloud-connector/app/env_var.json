@@ -1,6 +1,8 @@
 {
     "endpoint"          :   "a2f287uu116gid.ats.iot.cn-north-1.amazonaws.com.cn",
     "deviceId"          :   "SDV_E2E_MiniDemoCar_China",
+    "topic_downstream": "enterer/downstream",
+    "topic_upstream": "enterer/upstream",
     "cert_filepath"     :   "/mnt/certs/cert.pem",
     "pri_key_filepath"  :   "/mnt/certs/private.key",
     "ca_filepath"       :   "/mnt/certs/root-CA.crt",
